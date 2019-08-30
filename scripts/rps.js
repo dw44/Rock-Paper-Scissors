@@ -6,15 +6,14 @@ function computerPlay() {
 }
 
 function getPlayerInput() {
-    let player;
-    do {
-        let valid = false;
-        player = prompt("Rock, Paper, Scissors - Pick One");
-    } while (player.toLowerCase() !== 'rock' ||
-             player.toLowerCase() !== 'paper' ||
-             player.toLowerCase() !== 'scissors');
-    return player;
-}
+    let player = prompt('Rock, Paper, Scissors. Pick');
+    if (player.toLowerCase() !== 'rock' ||
+        player.toLowerCase() !== 'paper' ||
+        player.toLowerCase() !== 'scissors') return player;
+    else {
+        return null;
+    }
+} //working. need to add functionality to reject invalid inputs
 
 function singleRound(playerSelection, computerSelection) {
     let player = playerSelection[0].toLowerCase();
@@ -54,4 +53,6 @@ function play() {
     return result;
 }
 
-play();
+for (let i = 0; i < 20; i++) {
+    console.log(`${i} - ${play()}`);
+}

@@ -1,5 +1,5 @@
 
-function computerPlay() {
+function computerPlay() { //simulates a single turn played by the computer
     let rps = ['rock', 'paper', 'scissors'];
     let n = Math.floor(Math.random() * 3);
     return rps[n];
@@ -18,8 +18,8 @@ function getPlayerInput() {
     }
 } //invalid value filter working.
 
-function singleRound(playerSelection, computerSelection) {
-    let player = playerSelection[0].toLowerCase();
+function singleRound(playerSelection, computerSelection) { // plays a single round. takes two values, both from "rock, paper, scissors", simulates a turn, and returns the outcome
+    let player = playerSelection[0].toLowerCase(); // converted to lowercase at this stage to eliminate case sensitivity
     let computer = computerSelection[0]; //use first letters of selections to simplify code for switch 
     let result = null;
     switch (true) { //if-else would have been cumbersome here
@@ -47,14 +47,6 @@ function singleRound(playerSelection, computerSelection) {
     }
     console.log(result + '\n');
     return result;    
-}
-
-function play() {
-    let player = getPlayerInput();
-    let computer = computerPlay();
-    result = singleRound(player, computer);
-    console.log(result);
-    return result;
 }
 
 function game() {

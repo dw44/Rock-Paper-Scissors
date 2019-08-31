@@ -7,13 +7,16 @@ function computerPlay() {
 
 function getPlayerInput() {
     let player = prompt('Rock, Paper, Scissors. Pick');
-    if (player.toLowerCase() !== 'rock' ||
-        player.toLowerCase() !== 'paper' ||
-        player.toLowerCase() !== 'scissors') return player;
-    else {
-        return null;
+    while (true) {
+        if (player.toLowerCase() === 'rock' ||
+            player.toLowerCase() === 'paper' ||
+            player.toLowerCase() === 'scissors') return player;
+        else {
+            alert("Enter a valid value.");
+            player = prompt('Rock, Paper, Scissors. Pick');
+        }
     }
-} //working. need to add functionality to reject invalid inputs
+} //invalid value filter working.
 
 function singleRound(playerSelection, computerSelection) {
     let player = playerSelection[0].toLowerCase();

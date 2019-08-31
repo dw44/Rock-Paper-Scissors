@@ -1,4 +1,3 @@
-
 function computerPlay() { //simulates a single turn played by the computer
     let rps = ['rock', 'paper', 'scissors'];
     let n = Math.floor(Math.random() * 3);

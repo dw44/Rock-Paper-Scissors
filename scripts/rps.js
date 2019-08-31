@@ -1,4 +1,3 @@
-
 function computerPlay() {
     let rps = ['rock', 'paper', 'scissors'];
     let n = Math.floor(Math.random() * 3);

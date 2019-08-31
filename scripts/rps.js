@@ -5,7 +5,7 @@ function computerPlay() { //simulates a single turn played by the computer
     return rps[n];
 }
 
-function getPlayerInput() {
+function getPlayerInput() { // gets an input from the player. only accepts rock, paper, or scissors.
     let player = prompt('Rock, Paper, Scissors. Pick');
     while (true) {
         if (player.toLowerCase() === 'rock' ||

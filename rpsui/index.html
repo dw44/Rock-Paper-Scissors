@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+    
+        <div class="heading">
+            <h1>Rock Paper Scissors</h1>
+        </div>
+        
+        <div class="buttonContainer">
+            <div class="playerselect">
+                <button class="playbutton" id="Rock">Rock</button>
+                <button class="playbutton" id="Paper">Paper</button>
+                <button class="playbutton" id="Scissors">Scissors</button>
+            </div>
+        </div>    
+
+        <div class="container">
+            <div class="scoreContainer">
+                <div class="choice">
+                    <h2>Most Recent Selection: </h2>
+                    <p>Player: <span id="playerchoice"></span></p>
+                    <p>Computer: <span id="computerchoice"></span></p>
+                </div>
+                <div class="round">
+                    <h2>Round</h2>
+                    <p>Player: <span id="playerRound"></span></p>
+                    <p>Computer: <span id="computerRound"></span></p>
+                </div>
+
+            </div>
+
+            <div class="scoreContainer">
+                <div class="game">
+                    <h2>Game</h2>
+                    <p>Player: <span id="playerGame"></span></p>
+                    <p>Computer: <span id="computerGame"></span></p>
+                </div>
+            </div>
+        </div>
+        <script src="logic.js"></script>
+    </body>
+</html>

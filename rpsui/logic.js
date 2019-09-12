@@ -47,35 +47,38 @@ function playRound(playerSelection, computerSelection) { // plays a single round
     const playerGame = document.getElementById("playerGame");
     const computerGame = document.getElementById("computerGame");
     let scores = {roundPlayer: 0, roundComputer: 0, gamePlayer: 0, gameComputer: 0};
+    // scores stored in object for convenience
 
     function round(player) {
         let compC = computerPlay();
         let outcome = playRound(player, compC);
-        playerChoice.textContent = player;
-        computerChoice.textContent = compC;
+        playerChoice.textContent = player; //displays player choice on main page for each round
+        computerChoice.textContent = compC; //displays computer choice on main page for each round
         if (outcome === 'w') {
             scores.roundPlayer += 1;
         }
         else if (outcome ==='l') {
             scores.roundComputer += 1;
         }
-        else {}
+        else {} // in case of draw, do nothing
     }
 
-    function display() {
+    function display() { 
+        // updates score values for round and game on the main score display
         playerRound.textContent = scores.roundPlayer;
         computerRound.textContent = scores.roundComputer;
         playerGame.textContent = scores.gamePlayer;
         computerGame.textContent = scores.gameComputer;
     }
 
-    function scoreUpdate() {
+    function scoreUpdate() { 
+        // updates score score values in memory, resets round scores when a game ends by someone scoring 5 points
         display();
-        if (scores.roundPlayer === 5) {
+        if (scores.roundPlayer === 5) { // round ends when score reaches 5
             scores.gamePlayer += 1;
             scores.roundComputer = 0;
             scores.roundPlayer = 0;
-            display();
+            display(); // to update score displays once scores are reset
         }
         else if (scores.roundComputer === 5) {
             scores.gameComputer += 1;
@@ -85,7 +88,7 @@ function playRound(playerSelection, computerSelection) { // plays a single round
         }
     }
 
-    rockButton.addEventListener('click', () => {
+    rockButton.addEventListener('click', () => { 
         round("Rock");
         scoreUpdate();
     });

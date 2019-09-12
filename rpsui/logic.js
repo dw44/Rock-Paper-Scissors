@@ -62,31 +62,28 @@ function playRound(playerSelection, computerSelection) { // plays a single round
         else {}
     }
 
-    function scoreUpdate() {
+    function display() {
         playerRound.textContent = scores.roundPlayer;
         computerRound.textContent = scores.roundComputer;
         playerGame.textContent = scores.gamePlayer;
         computerGame.textContent = scores.gameComputer;
+    }
+
+    function scoreUpdate() {
+        display();
         if (scores.roundPlayer === 5) {
             scores.gamePlayer += 1;
             scores.roundComputer = 0;
             scores.roundPlayer = 0;
-            playerRound.textContent = scores.roundPlayer;
-            computerRound.textContent = scores.roundComputer;
-            playerGame.textContent = scores.gamePlayer;
-            computerGame.textContent = scores.gameComputer;
+            display();
         }
         else if (scores.roundComputer === 5) {
             scores.gameComputer += 1;
             scores.roundComputer = 0;
             scores.roundPlayer = 0;
-            playerRound.textContent = scores.roundPlayer;
-            computerRound.textContent = scores.roundComputer;
-            playerGame.textContent = scores.gamePlayer;
-            computerGame.textContent = scores.gameComputer;
+            display();
         }
     }
-
 
     rockButton.addEventListener('click', () => {
         round("Rock");
